@@ -33,7 +33,7 @@ if health() == 'healthy' and os.environ.get('retry') is None:
         'user':{
             'first_name':'a',
             'last_name':'b',
-            'email':'a@b.com',
+            'email':'test@test.com',
             'password':'metabot1',
         },
         'prefs':{
