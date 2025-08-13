@@ -1,0 +1,49 @@
+services:
+  metabase:
+    image: metabase/metabase:v0.56.2
+    hostname: metabase
+    ports:
+      - 3000:3000
+    volumes:
+      - ./datastacksurvey2025.db:/home/metabase/datastacksurvey2025.db
+    networks:
+      - metanet
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2048M
+        reservations:
+          cpus: '2'
+          memory: 2048M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  setup:
+    image: python:3-alpine
+    container_name: setup
+    volumes:
+      - ./setup.py:/app/setup.py
+    networks:
+      - metanet
+    depends_on:
+      metabase:
+        condition: service_healthy
+    command: sh -c "pip install requests && python /app/setup.py"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 64M
+        reservations:
+          cpus: '0.5'
+          memory: 32M
+    environment:
+      host: http://metabase
+      port: 3000
+
+networks:
+  metanet:
+    driver: bridge
