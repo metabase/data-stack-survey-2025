@@ -20,7 +20,7 @@ def health():
         health()
 
 if health() == 'healthy' and os.environ.get('retry') == 'yes':
-    loginPayload = { 'username': 'a@b.com', 'password': 'metabot1' }
+    loginPayload = { 'username': 'test@test.com', 'password': 'metabot1' }
     session = requests.Session()
     sessionToken = session.post(login, verify=False, json=loginPayload)
     session.post(database, verify=False, json=sqlite)
