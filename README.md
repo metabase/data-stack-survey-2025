@@ -1,6 +1,6 @@
-# Metabase Data Stack Setup
+# Metabase Community Data Stack Survey 2025 - raw data
 
-This project sets up Metabase with a SQLite database for data analysis.
+About: In the northern hemisphere summer of 2025, we surveyed 338 companies on how they choose and use their modern data stack-and how AI is shaping their workflows. This repo spins up Metabase and loads the raw survey responses so you can explore them yourself. Curious about our take? [Here is the full report](https://metabase.com/data-stack-report-2025?utm_source=github&utm_medium=repo&utm_campaign=data-stack-report-2025).
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ This project sets up Metabase with a SQLite database for data analysis.
     docker-compose up -d
     ```
 
-    This command builds and starts the Metabase and setup services defined in the [docker-compose.yaml](docker-compose.yaml) file. Metabase will be accessible at `http://localhost:3000`.
+    This command starts Metabase and setup services defined in the [docker-compose.yaml](docker-compose.yaml) file. Metabase will be accessible at `http://localhost:3000`.
 
 ## Usage
 
@@ -38,7 +38,7 @@ This project sets up Metabase with a SQLite database for data analysis.
 
     Log in with the credentials defined in [setup.py](setup.py):
 
-    *   Email: `a@b.com`
+    *   Email: `test@test.com`
     *   Password: `metabot1`
 
 4.  **Explore the Data:**
