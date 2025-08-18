@@ -19,7 +19,7 @@ About: In the northern hemisphere summer of 2025, we surveyed 338 companies on h
 2.  **Run docker compose:**
 
     ```bash
-    docker-compose up -d
+    docker compose up
     ```
 
     This command starts Metabase and setup services defined in the [docker-compose.yaml](docker-compose.yaml) file. Metabase will be accessible at `http://localhost:3000`.
